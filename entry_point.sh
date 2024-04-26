@@ -6,4 +6,9 @@ then
     cp /src/hlog/README ./README
 fi
 
-/usr/local/bin/hlog ./hlog
+if [ $# -eq 0 ]
+then
+	/usr/local/bin/hlog ./hlog
+else
+	/usr/local/bin/hlog-contest -c "$1" ./hlog
+fi
